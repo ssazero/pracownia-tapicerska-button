@@ -1,13 +1,6 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
-import React, { useState, useEffect, useRef } from "react"
-import PropTypes from "prop-types"
-import { library } from "@fortawesome/fontawesome-svg-core"
+import React, { useState, useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
+import { library } from '@fortawesome/fontawesome-svg-core';
 import {
   faEnvelope,
   faAddressCard,
@@ -18,14 +11,14 @@ import {
   faPhoneAlt,
   faMobileAlt,
   faMapMarkerAlt,
-} from "@fortawesome/free-solid-svg-icons"
-import SimpleReactLightbox from "simple-react-lightbox"
+} from '@fortawesome/free-solid-svg-icons';
+import SimpleReactLightbox from 'simple-react-lightbox';
 
-import Toolbar from "../components/toolbar"
-import Footer from "../components/footer"
-import SideDrawer from "../components/sideDrawer"
-import Sidebar from "../components/sidebar"
-import "../sass/main.scss"
+import Toolbar from '../components/toolbar';
+import Footer from '../components/footer';
+import SideDrawer from '../components/sideDrawer';
+import Sidebar from '../components/sidebar';
+import '../sass/main.scss';
 
 library.add(
   faEnvelope,
@@ -37,71 +30,71 @@ library.add(
   faPhoneAlt,
   faMobileAlt,
   faMapMarkerAlt
-)
+);
 
 console.log(
-  "Thanks for lightbox to: https://www.npmjs.com/package/simple-react-lightbox"
-)
+  'Thanks for lightbox to: https://www.npmjs.com/package/simple-react-lightbox'
+);
 
-const Layout = props => {
-  const [sideDrawerIsVisible, setSideDrawerIsVisible] = useState(false)
-  const [scrollY, setScrollY] = useState(0)
-  const [toolbarAlteration, setToolbarAlteration] = useState(false)
-  const [sidebarAlteration, setSidebarAlteration] = useState(false)
-  const toolbarRef = useRef(null)
-  const layoutRef = useRef(null)
-  const sidebarContentRef = useRef(null)
-  const footerRef = useRef(null)
+const Layout = (props) => {
+  const [sideDrawerIsVisible, setSideDrawerIsVisible] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
+  const [toolbarAlteration, setToolbarAlteration] = useState(false);
+  const [sidebarAlteration, setSidebarAlteration] = useState(false);
+  const toolbarRef = useRef(null);
+  const layoutRef = useRef(null);
+  const sidebarContentRef = useRef(null);
+  const footerRef = useRef(null);
 
   const yOffset = () => {
-    setScrollY(window.pageYOffset)
-  }
+    setScrollY(window.pageYOffset);
+  };
 
   useEffect(() => {
-    window.addEventListener("scroll", yOffset)
+    window.addEventListener('scroll', yOffset);
 
     return () => {
-      window.removeEventListener("scroll", yOffset)
-    }
-  })
+      window.removeEventListener('scroll', yOffset);
+    };
+  });
 
   useEffect(() => {
     if (scrollY > 70) {
-      setToolbarAlteration(true)
+      setToolbarAlteration(true);
     } else {
-      setToolbarAlteration(false)
+      setToolbarAlteration(false);
     }
-  }, [setToolbarAlteration, scrollY])
+  }, [setToolbarAlteration, scrollY]);
 
   useEffect(() => {
     if (
       scrollY + sidebarContentRef.current.clientHeight >
       layoutRef.current.clientHeight - footerRef.current.clientHeight
     ) {
-      setSidebarAlteration(true)
+      setSidebarAlteration(true);
     } else {
-      setSidebarAlteration(false)
+      setSidebarAlteration(false);
     }
-  }, [setSidebarAlteration, scrollY, sidebarContentRef, footerRef])
+  }, [setSidebarAlteration, scrollY, sidebarContentRef, footerRef]);
 
   const sideDrawerToggleHandler = () => {
-    setSideDrawerIsVisible(!sideDrawerIsVisible)
-  }
+    setSideDrawerIsVisible(!sideDrawerIsVisible);
+  };
 
   const sideDrawerClosedHandler = () => {
-    setSideDrawerIsVisible(false)
-  }
+    setSideDrawerIsVisible(false);
+  };
 
   return (
     <SimpleReactLightbox>
-      <div className="layout" ref={layoutRef}>
-        <div className="layout__start">
+      <div className='layout' ref={layoutRef}>
+        <div className='layout__start'>
           <Sidebar
             contentRef={sidebarContentRef}
             alteration={sidebarAlteration}
           />
-          <div className="main">
-            <div className="layout__toolbar">
+          <div className='main'>
+            <div className='layout__toolbar'>
               <Toolbar
                 sideDrawerToggle={sideDrawerToggleHandler}
                 sideDrawerIsVisible={sideDrawerIsVisible}
@@ -109,7 +102,7 @@ const Layout = props => {
                 toolbarRef={toolbarRef}
               />
             </div>
-            <main className="content">{props.children}</main>
+            <main className='content'>{props.children}</main>
           </div>
         </div>
         <Footer footerRef={footerRef} />
@@ -119,11 +112,11 @@ const Layout = props => {
         />
       </div>
     </SimpleReactLightbox>
-  )
-}
+  );
+};
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
-export default Layout
+export default Layout;
