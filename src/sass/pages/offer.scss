@@ -1,0 +1,141 @@
+.offer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  font-size: 1.7rem;
+  color: $color-white;
+  overflow: hidden;
+
+  &:after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    background-image: url('/realisations/p17.jpg');
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.1;
+  }
+
+  &__content {
+    max-width: 90rem;
+    margin: 3rem auto;
+  }
+
+  &__description {
+    max-width: 70rem;
+    text-align: justify;
+    margin: 0 auto;
+
+    animation: fade-in 1s ease;
+
+    @include respond(tab-land) {
+      padding: 2rem;
+    }
+
+    @include respond(tab-port) {
+      padding: 0;
+    }
+
+    @include respond(phone) {
+      margin: 0 2rem;
+    }
+  }
+
+  &__capabilities {
+    display: flex;
+    margin: 3rem auto;
+
+    @include respond(tab-port) {
+      flex-direction: column;
+      max-width: 70rem;
+    }
+
+    &-item {
+      position: relative;
+
+      animation: fade-in 1s ease;
+
+      flex: 33%;
+      height: 25rem;
+      margin: 0.5rem;
+      padding: 0.5rem;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      @include respond(tab-port) {
+        margin: 0 1rem 3rem 1rem;
+        height: auto;
+      }
+
+      &:hover &-content {
+        display: block;
+      }
+
+      &-title {
+        position: relative;
+
+        & > h3 {
+          display: inline-block;
+          font-size: 2.4rem;
+          color: $color-white;
+        }
+      }
+
+      &-content {
+        display: none;
+
+        animation: fade-in 0.3s ease;
+
+        @include respond(tab-port) {
+          display: block;
+        }
+
+        max-width: 40rem;
+        margin-top: 1rem;
+        font-size: 1.6rem;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.white-button {
+  display: inline-block;
+  position: relative;
+  top: 0.2rem;
+  height: 2.2rem;
+  width: 2.2rem;
+  border-radius: 50%;
+  background-color: $color-white;
+
+  &--1 {
+    position: absolute;
+    height: 0.5rem;
+    width: 0.5rem;
+    top: 60%;
+    left: 25%;
+    background-color: $color-background;
+
+    transform: translateY(-50%);
+  }
+
+  &--2 {
+    position: absolute;
+    height: 0.5rem;
+    width: 0.5rem;
+    top: 40%;
+    right: 25%;
+    background-color: $color-background;
+
+    transform: translateY(-50%);
+  }
+}

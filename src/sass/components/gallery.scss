@@ -1,0 +1,54 @@
+.gallery {
+    max-width: 130rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 1px auto;
+
+    @include respond(phone) {
+        margin: 1px;
+    }
+
+    &__item {
+        flex: 1 1 30%;
+        margin: 1px;
+        height: 30rem;
+        width: 40rem;
+        overflow: hidden;
+        cursor: pointer;
+
+        animation: fade-in 1s ease;
+
+        @include respond(tab-land) {
+            flex: 1 1 49%;
+            width: 49%;
+        }
+
+        @include respond(phone) {
+            flex: 1 1 100%;
+            width: 100%;
+        }
+
+        &:last-child {
+            max-width: 50%;
+
+            @include respond(phone) {
+                max-width: 100%;
+            }
+        }
+
+        &:hover &-image {
+            transform: scale(1.03);
+            filter: brightness(1.3);
+        }
+
+        &-image {
+            object-position: center;
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+
+            transition: all .2s ease;
+        }
+    }
+}

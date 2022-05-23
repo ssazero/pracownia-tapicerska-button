@@ -1,0 +1,26 @@
+// COLORS
+$color-primary: #333;
+$color-background: #0f0f0f;
+$main-gradient: linear-gradient(175deg, #2c2c2c 0%, #181819 43%, #151516 100%);
+$main-gradient-t: linear-gradient(175deg, #0f0f0faa 0%, #0f0f0fe5 43%, #0f0f0fff 100%);
+$inactive-gradient: radial-gradient(circle, rgba(201, 201, 201, 0.658) 0%, rgba(167, 167, 167, 0.616) 52%, rgba(129, 129, 129, 0.568) 91%);
+$white-gradient: linear-gradient(90deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 43%, rgba(255, 255, 255, 0.9) 100%);
+
+$color-grey-light-1: #f7f7f7;
+$color-grey-light-2: #eee;
+
+$color-grey: rgb(100, 100, 100);
+$color-grey-2: #999;
+
+$color-white: #fcfcfc;
+$color-black: #000;
+$color-dark: #141414;
+
+// FONT
+$small-font-size: 1.4rem;
+$default-font-size: 1.6rem;
+$medium-font-size: 1.8rem;
+$large-font-size: 1.8rem;
+
+// OTHER
+$default-margin-bottom: 7rem;
