@@ -1,9 +1,11 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 import { SRLWrapper } from 'simple-react-lightbox';
 
 import SEO from '../components/seo';
 import Layout from '../containers/layout';
 import GalleryItem from '../components/galleryItem';
+import { compareNames } from '../utils/stringUtils';
 
 const options = {
   buttons: {
@@ -33,202 +35,33 @@ const options = {
   },
 };
 
-const Realisations = () => {
-  const images = [
-    {
-      src: '/realisations/p1.jpg',
-      thumbnail: '/realisations/p1_tn.jpg',
-      caption:
-        'Meble tapicerowane wg indywidualnego projektu -  Projekt W Pracownia Architektury Wnętrz - www.projektw.pl',
-    },
-    {
-      src: '/realisations/p2.jpg',
-      thumbnail: '/realisations/p2_tn.jpg',
-      caption:
-        'Meble tapicerowane wg indywidualnego projektu -  Projekt W Pracownia Architektury Wnętrz - www.projektw.pl',
-    },
-    {
-      src: '/realisations/p3.jpg',
-      thumbnail: '/realisations/p3_tn.jpg',
-      caption:
-        'Meble tapicerowane wg indywidualnego projektu -  Projekt W Pracownia Architektury Wnętrz - www.projektw.pl',
-    },
-    {
-      src: '/realisations/p4.jpg',
-      thumbnail: '/realisations/p4_tn.jpg',
-      caption:
-        'Meble tapicerowane wg indywidualnego projektu -  Projekt W Pracownia Architektury Wnętrz - www.projektw.pl',
-    },
-    {
-      src: '/realisations/p5.jpg',
-      thumbnail: '/realisations/p5_tn.jpg',
-      caption:
-        'Meble tapicerowane wg indywidualnego projektu -  Projekt W Pracownia Architektury Wnętrz - www.projektw.pl',
-    },
-    {
-      src: '/realisations/p6.jpg',
-      thumbnail: '/realisations/p6_tn.jpg',
-      caption:
-        'Meble tapicerowane wg indywidualnego projektu -  Projekt W Pracownia Architektury Wnętrz - www.projektw.pl',
-    },
-    {
-      src: '/realisations/p7.jpg',
-      thumbnail: '/realisations/p7_tn.jpg',
-      caption:
-        'Meble tapicerowane wg indywidualnego projektu -  Projekt W Pracownia Architektury Wnętrz - www.projektw.pl',
-    },
-    {
-      src: '/realisations/p8.jpg',
-      thumbnail: '/realisations/p8_tn.jpg',
-      caption:
-        'Meble tapicerowane wg indywidualnego projektu -  Projekt W Pracownia Architektury Wnętrz - www.projektw.pl',
-    },
-    {
-      src: '/realisations/p9.jpg',
-      thumbnail: '/realisations/p9_tn.jpg',
-      caption:
-        'Meble tapicerowane wg indywidualnego projektu -  Projekt W Pracownia Architektury Wnętrz - www.projektw.pl',
-    },
-    {
-      src: '/realisations/p10.jpg',
-      thumbnail: '/realisations/p10_tn.jpg',
-      caption:
-        'Meble tapicerowane wg indywidualnego projektu -  Projekt W Pracownia Architektury Wnętrz - www.projektw.pl',
-    },
-    {
-      src: '/realisations/p11.jpg',
-      thumbnail: '/realisations/p11_tn.jpg',
-      caption:
-        'Meble tapicerowane wg indywidualnego projektu -  Projekt W Pracownia Architektury Wnętrz - www.projektw.pl',
-    },
-    {
-      src: '/realisations/p12.jpg',
-      thumbnail: '/realisations/p12_tn.jpg',
-      caption:
-        'Meble tapicerowane wg indywidualnego projektu -  Projekt W Pracownia Architektury Wnętrz - www.projektw.pl',
-    },
-    {
-      src: '/realisations/p13.jpg',
-      thumbnail: '/realisations/p13_tn.jpg',
-      caption:
-        'Meble tapicerowane wg indywidualnego projektu -  Projekt W Pracownia Architektury Wnętrz - www.projektw.pl',
-    },
-    {
-      src: '/realisations/p14.jpg',
-      thumbnail: '/realisations/p14_tn.jpg',
-      caption:
-        'Meble tapicerowane wg indywidualnego projektu -  Projekt W Pracownia Architektury Wnętrz - www.projektw.pl',
-    },
-    {
-      src: '/realisations/p15.jpg',
-      thumbnail: '/realisations/p15_tn.jpg',
-      caption:
-        'Meble tapicerowane wg indywidualnego projektu -  Projekt W Pracownia Architektury Wnętrz - www.projektw.pl',
-    },
-    {
-      src: '/realisations/p16.jpg',
-      thumbnail: '/realisations/p16_tn.jpg',
-      caption:
-        'Meble tapicerowane wg indywidualnego projektu -  Projekt W Pracownia Architektury Wnętrz - www.projektw.pl',
-    },
-    {
-      src: '/realisations/p17.jpg',
-      thumbnail: '/realisations/p17_tn.jpg',
-      caption:
-        'Meble tapicerowane wg indywidualnego projektu -  Projekt W Pracownia Architektury Wnętrz - www.projektw.pl',
-    },
-    {
-      src: '/realisations/p18.jpg',
-      thumbnail: '/realisations/p18_tn.jpg',
-      caption:
-        'Meble tapicerowane wg indywidualnego projektu -  Projekt W Pracownia Architektury Wnętrz - www.projektw.pl',
-    },
-    {
-      src: '/realisations/p19.jpg',
-      thumbnail: '/realisations/p19_tn.jpg',
-      caption:
-        'Meble tapicerowane wg indywidualnego projektu -  Projekt W Pracownia Architektury Wnętrz - www.projektw.pl',
-    },
-    {
-      src: '/realisations/p20.jpg',
-      thumbnail: '/realisations/p20_tn.jpg',
-      caption:
-        'Meble tapicerowane wg indywidualnego projektu -  Projekt W Pracownia Architektury Wnętrz - www.projektw.pl',
-    },
-    {
-      src: '/realisations/p21.jpg',
-      thumbnail: '/realisations/p21_tn.jpg',
-      caption:
-        'Meble tapicerowane wg indywidualnego projektu -  Projekt W Pracownia Architektury Wnętrz - www.projektw.pl',
-    },
-    {
-      src: '/realisations/p22.jpg',
-      thumbnail: '/realisations/p22_tn.jpg',
-      caption:
-        'Meble tapicerowane wg indywidualnego projektu -  Projekt W Pracownia Architektury Wnętrz - www.projektw.pl',
-    },
-    {
-      src: '/realisations/p23.jpg',
-      thumbnail: '/realisations/p23_tn.jpg',
-      caption:
-        'Meble tapicerowane wg indywidualnego projektu -  Projekt W Pracownia Architektury Wnętrz - www.projektw.pl',
-    },
-    {
-      src: '/realisations/p24.jpg',
-      thumbnail: '/realisations/p24_tn.jpg',
-      caption:
-        'Meble tapicerowane wg indywidualnego projektu -  Projekt W Pracownia Architektury Wnętrz - www.projektw.pl',
-    },
-    {
-      src: '/realisations/p25.jpg',
-      thumbnail: '/realisations/p25_tn.jpg',
-      caption:
-        'Meble tapicerowane wg indywidualnego projektu -  Projekt W Pracownia Architektury Wnętrz - www.projektw.pl',
-    },
-    {
-      src: '/realisations/p26.jpg',
-      thumbnail: '/realisations/p26_tn.jpg',
-      caption:
-        'Meble tapicerowane wg indywidualnego projektu -  Projekt W Pracownia Architektury Wnętrz - www.projektw.pl',
-    },
-    {
-      src: '/realisations/p27.jpg',
-      thumbnail: '/realisations/p27_tn.jpg',
-      caption:
-        'Meble tapicerowane wg indywidualnego projektu -  Projekt W Pracownia Architektury Wnętrz - www.projektw.pl',
-    },
-    {
-      src: '/realisations/p28.jpg',
-      thumbnail: '/realisations/p28_tn.jpg',
-      caption:
-        'Meble tapicerowane wg indywidualnego projektu -  Projekt W Pracownia Architektury Wnętrz - www.projektw.pl',
-    },
-    {
-      src: '/realisations/p29.jpg',
-      thumbnail: '/realisations/p29_tn.jpg',
-      caption:
-        'Meble tapicerowane wg indywidualnego projektu -  Projekt W Pracownia Architektury Wnętrz - www.projektw.pl',
-    },
-    {
-      src: '/realisations/p30.jpg',
-      thumbnail: '/realisations/p30_tn.jpg',
-      caption:
-        'Meble tapicerowane wg indywidualnego projektu -  Projekt W Pracownia Architektury Wnętrz - www.projektw.pl',
-    },
-    {
-      src: '/realisations/p31.jpg',
-      thumbnail: '/realisations/p31_tn.jpg',
-      caption:
-        'Meble tapicerowane wg indywidualnego projektu -  Projekt W Pracownia Architektury Wnętrz - www.projektw.pl',
-    },
-  ];
+const Realisations = ({ data }) => {
+  console.log(data);
+  const numberOfRealisations = data.realisations.nodes.length;
 
-  const galleryItems = images.map((image, index) => (
+  const thumbnailSources = data.realisations.nodes
+    .map((el) => el.childImageSharp.fluid)
+    .sort((a, b) => compareNames(a.originalName, b.originalName));
+
+  const imageSources = data.realisations.nodes
+    .sort((a, b) =>
+      compareNames(
+        a.childImageSharp.fluid.originalName,
+        b.childImageSharp.fluid.originalName
+      )
+    )
+    .map((el) => el.childImageSharp.fluid.originalImg);
+
+  console.log(thumbnailSources, imageSources);
+
+  const galleryItems = [...Array(numberOfRealisations)].map((_, i) => (
     <GalleryItem
-      key={'Realizacja ' + index}
-      src={image.src}
-      thumbnail={image.thumbnail}
-      caption={image.caption}
+      key={'Realizacja ' + i}
+      src={imageSources[i]}
+      thumbnail={thumbnailSources[i]}
+      caption={
+        'Meble tapicerowane wg indywidualnego projektu -  Projekt W Pracownia Architektury Wnętrz - www.projektw.pl'
+      }
     />
   ));
 
@@ -244,4 +77,23 @@ const Realisations = () => {
     </Layout>
   );
 };
+
 export default Realisations;
+
+export const query = graphql`
+  query AllRealisations {
+    realisations: allFile(
+      filter: { relativePath: { regex: "/realisations/" } }
+    ) {
+      nodes {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+            originalName
+            originalImg
+          }
+        }
+      }
+    }
+  }
+`;

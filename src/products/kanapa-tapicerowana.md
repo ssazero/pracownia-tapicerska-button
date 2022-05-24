@@ -2,6 +2,8 @@
 title: Kanapa Tapicerowana
 stack: Boom
 slug: kanapa-tapicerowana
+thumb: smaller-link
+featuredImg: bigger-img
 ---
 
 ### Kanapa tapicerowana
