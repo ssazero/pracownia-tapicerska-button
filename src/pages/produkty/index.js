@@ -5,7 +5,11 @@ import Layout from '../../containers/layout';
 import SEO from '../../components/seo';
 
 const Products = ({ data }) => {
-  const products = data.allMarkdownRemark.nodes;
+  const beds = data.beds.nodes;
+  const sofas = data.sofas.nodes;
+  const products = new Array().concat(beds, sofas);
+
+  console.log(products);
 
   return (
     <Layout>
@@ -18,10 +22,10 @@ const Products = ({ data }) => {
       </h1>
       <div className='products'>
         {products.map((product) => (
-          <Link to={`/produkty/${product.frontmatter.slug}`} key={product.id}>
+          <Link to={`/produkty/${product.slug}`} key={product.id}>
             <div>
-              <h3>{product.frontmatter.title}</h3>
-              <p>{product.frontmatter.stack}</p>
+              <h3>{product.title}</h3>
+              <p>{product.category}</p>
             </div>
           </Link>
         ))}
@@ -33,15 +37,33 @@ const Products = ({ data }) => {
 export default Products;
 
 export const query = graphql`
-  query MyQuery {
-    allMarkdownRemark {
+  query AllProducts {
+    beds: allBedsJson {
       nodes {
-        frontmatter {
-          slug
-          stack
-          title
+        img {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
         }
-        id
+        category
+        title
+        slug
+      }
+    }
+    sofas: allSofasJson {
+      nodes {
+        img {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        category
+        title
+        slug
       }
     }
   }

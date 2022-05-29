@@ -8,8 +8,6 @@ import Partner from '../components/partner';
 const Partners = () => {
   const { partners } = useStaticQuery(query);
 
-  console.log(partners);
-
   return (
     <Layout>
       <SEO

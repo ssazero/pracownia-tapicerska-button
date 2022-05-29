@@ -8,7 +8,6 @@ const Partner = (props) => {
   };
   return (
     <div className='partners__item' style={styles}>
-      {console.log(props)}
       <a
         className='partners__item-link'
         href={props.link}

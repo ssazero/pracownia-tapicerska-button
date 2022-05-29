@@ -1,0 +1,18 @@
+[
+  {
+    "title": "Blekitne lozko",
+    "slug": "blekitne-lozko",
+    "category": "bed",
+    "img": "../../images/products/blekitne-lozko.jpg",
+    "description": "Super szara sofa.",
+    "materials": ["Szary jedwab", "Ćwierkowany czerwień"]
+  },
+  {
+    "title": "Bezowe lozko",
+    "slug": "bezowe-lozko",
+    "category": "bed",
+    "img": "../../images/products/bezowe-lozko.jpg",
+    "description": "Sofa z dwoma szafkami.",
+    "materials": ["Szary jedwab", "Pomarszczony błękit"]
+  }
+]

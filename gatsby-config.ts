@@ -43,6 +43,13 @@ const config: GatsbyConfig = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
+        name: 'products',
+        path: `${__dirname}/src/data/products`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
         name: 'images',
         path: `${__dirname}/src/images`,
       },
@@ -55,15 +62,9 @@ const config: GatsbyConfig = {
       },
     },
     {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'products',
-        path: `${__dirname}/src/data/products`,
-      },
-    },
-    {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: 'data',
         path: `${__dirname}/src/data`,
       },
     },
