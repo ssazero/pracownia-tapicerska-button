@@ -16,10 +16,10 @@ const IndexPage = () => {
       src: '/realisations/p28.jpg',
     },
     {
-      src: '/images/realisations/p13.jpg',
+      src: '/realisations/p13.jpg',
     },
     {
-      src: '/images/realisations/p18.jpg',
+      src: '/realisations/p18.jpg',
     },
   ];
   return (

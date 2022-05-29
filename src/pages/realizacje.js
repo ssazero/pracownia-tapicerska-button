@@ -36,7 +36,6 @@ const options = {
 };
 
 const Realisations = ({ data }) => {
-  console.log(data);
   const numberOfRealisations = data.realisations.nodes.length;
 
   const thumbnailSources = data.realisations.nodes
@@ -51,8 +50,6 @@ const Realisations = ({ data }) => {
       )
     )
     .map((el) => el.childImageSharp.fluid.originalImg);
-
-  console.log(thumbnailSources, imageSources);
 
   const galleryItems = [...Array(numberOfRealisations)].map((_, i) => (
     <GalleryItem

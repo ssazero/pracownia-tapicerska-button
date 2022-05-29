@@ -1,10 +1,15 @@
 import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
 
 import SEO from '../components/seo';
 import Layout from '../containers/layout';
 import Partner from '../components/partner';
 
 const Partners = () => {
+  const { partners } = useStaticQuery(query);
+
+  console.log(partners);
+
   return (
     <Layout>
       <SEO
@@ -16,37 +21,43 @@ const Partners = () => {
           <span>Partnerzy</span>
         </h1>
         <div className='partners__content'>
-          <Partner
-            link='http://projektw.pl/'
-            src='/partners/projekt-w.png'
-            alt='Projekt W'
-          />
-          <Partner
-            link='https://www.toptextil.pl/'
-            src='/partners/toptextil.png'
-            alt='Toptextil'
-            style={{ padding: '1.7rem' }}
-          />
-          <Partner
-            link='https://www.fargotex.pl/'
-            src='/partners/fargotex.png'
-            alt='Fargotex'
-            style={{ padding: '2.6rem' }}
-          />
-          <Partner
-            link='https://kameleon.pro/'
-            src='/partners/kameleonpro.png'
-            alt='Kameleon'
-          />
-          <Partner
-            link='https://eldo.pl/'
-            src='/partners/eldo.png'
-            alt='eldo'
-            style={{ padding: '1.7rem' }}
-          />
+          {partners.nodes.map((partner) => (
+            <Partner
+              key={partner.id}
+              link={partner.link}
+              src={partner.img.childImageSharp.fluid}
+              alt={partner.alt}
+              style={partner.style}
+            />
+          ))}
         </div>
       </article>
     </Layout>
   );
 };
+
 export default Partners;
+
+export const query = graphql`
+  query AllPartners {
+    partners: allPartnersJson {
+      nodes {
+        id
+        link
+        img {
+          id
+          childImageSharp {
+            fluid {
+              aspectRatio
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        alt
+        style {
+          padding
+        }
+      }
+    }
+  }
+`;

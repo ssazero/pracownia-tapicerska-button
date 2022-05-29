@@ -1,0 +1,32 @@
+[
+  {
+    "link": "http://projektw.pl/",
+    "img": "../images/partners/projekt-w.png",
+    "alt": "Projekt W",
+    "style": {}
+  },
+  {
+    "link": "https://www.toptextil.pl/",
+    "img": "../images/partners/toptextil.png",
+    "alt": "Toptextil",
+    "style": { "padding": "1.7rem" }
+  },
+  {
+    "link": "https://www.fargotex.pl/",
+    "img": "../images/partners/fargotex.png",
+    "alt": "Fargotex",
+    "style": { "padding": "2.6rem" }
+  },
+  {
+    "link": "https://kameleon.pro/",
+    "img": "../images/partners/kameleonpro.png",
+    "alt": "Kameleon",
+    "style": {}
+  },
+  {
+    "link": "https://eldo.pl/",
+    "img": "../images/partners/eldo.png",
+    "alt": "eldo",
+    "style": { "padding": "1.7rem" }
+  }
+]
