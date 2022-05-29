@@ -1,12 +1,13 @@
 import React from 'react';
-import Layout from '../containers/layout';
-import SEO from '../components/seo';
+import Layout from '../containers/Layout';
+import Seo from '../components/SEO';
 
 const ProjectDetails = ({ pageContext }) => {
   console.log(pageContext);
+
   return (
     <Layout>
-      <SEO
+      <Seo
         title='Partnerzy'
         description='Nasi partnerzy: Projekt W, Kameleoon'
       />

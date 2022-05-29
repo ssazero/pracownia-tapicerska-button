@@ -14,10 +14,10 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import SimpleReactLightbox from 'simple-react-lightbox';
 
-import Toolbar from '../components/toolbar';
-import Footer from '../components/footer';
-import SideDrawer from '../components/sideDrawer';
-import Sidebar from '../components/sidebar';
+import Toolbar from '../components/Toolbar';
+import Footer from '../components/Footer';
+import SideDrawer from '../components/SideDrawer';
+import Sidebar from '../components/Sidebar';
 import '../sass/main.scss';
 
 library.add(
@@ -47,15 +47,19 @@ const Layout = (props) => {
   const footerRef = useRef(null);
 
   const yOffset = () => {
-    setScrollY(window.pageYOffset);
+    if (window) {
+      setScrollY(window.pageYOffset);
+    }
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', yOffset);
+    if (window) {
+      window.addEventListener('scroll', yOffset);
 
-    return () => {
-      window.removeEventListener('scroll', yOffset);
-    };
+      return () => {
+        window.removeEventListener('scroll', yOffset);
+      };
+    }
   });
 
   useEffect(() => {

@@ -2,9 +2,9 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { SRLWrapper } from 'simple-react-lightbox';
 
-import SEO from '../components/seo';
-import Layout from '../containers/layout';
-import GalleryItem from '../components/galleryItem';
+import Seo from '../components/SEO';
+import Layout from '../containers/Layout';
+import GalleryItem from '../components/GalleryItem';
 import { compareNames } from '../utils/stringUtils';
 
 const options = {
@@ -64,7 +64,7 @@ const Realisations = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title='Realizacje' />
+      <Seo title='Realizacje' />
       <h1 className='section-title'>
         <span>Galeria z realizacji</span>
       </h1>

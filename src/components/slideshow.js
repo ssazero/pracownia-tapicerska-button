@@ -61,6 +61,8 @@ const Slideshow = (props) => {
         key={'slideshow-dot-' + index}
         className={classes.join(' ')}
         onClick={() => slideChangeHandler(index)}
+        role='button'
+        tabIndex='0'
       >
         <div className='slideshow__dots-item-hole slideshow__dots-item-hole--1'></div>
         <div className='slideshow__dots-item-hole slideshow__dots-item-hole--2'></div>
@@ -79,6 +81,8 @@ const Slideshow = (props) => {
       <div className='slideshow__dots'>{slideshowDots}</div>
       <div
         className='slideshow__button slideshow__button--previous'
+        role='button'
+        tabIndex='0'
         onClick={() => {
           slideChangeHandler(slideIndex - 1);
         }}
@@ -89,6 +93,8 @@ const Slideshow = (props) => {
       </div>
       <div
         className='slideshow__button slideshow__button--next'
+        role='button'
+        tabIndex='0'
         onClick={() => {
           slideChangeHandler(slideIndex + 1);
         }}
@@ -98,7 +104,7 @@ const Slideshow = (props) => {
         <div className='slideshow__arrow slideshow__arrow--next'></div>
       </div>
       <CSSTransition
-        key={'slide-' + slideIndex}
+        key={`slide-${slideIndex}`}
         timeout={2000}
         classNames='slide'
         unmountOnExit
@@ -107,7 +113,7 @@ const Slideshow = (props) => {
           <img
             className='slideshow__slide-image'
             src={slides[slideIndex].src}
-            alt='Slide image'
+            alt={`slide-${slideIndex}`}
           />
         </div>
       </CSSTransition>

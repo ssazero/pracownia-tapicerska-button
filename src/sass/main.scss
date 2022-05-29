@@ -4,7 +4,7 @@
 
 @import './app.scss';
 
-@import './containers/layout';
+@import './containers/Layout';
 
 @import './components/toolbar.scss';
 @import './components/navigation.scss';
@@ -16,6 +16,7 @@
 @import './components/slideshow.scss';
 @import './components/gallery.scss';
 @import './components/sidebar.scss';
+@import './components/productItem.scss';
 
 @import './pages/offer.scss';
 @import './pages/partners.scss';

@@ -1,18 +1,20 @@
 [
   {
-    "title": "Szara sofa",
-    "slug": "szara-sofa",
+    "title": "Sofa beżowa",
+    "slug": "sofa-bezowa",
     "category": "sofa",
-    "img": "../../images/products/szara-sofa.jpg",
-    "description": "Super szara sofa.",
-    "materials": ["Szary jedwab", "Ćwierkowany czerwień"]
+    "img": "../../images/products/sofa-bezowa.png",
+    "description": "Podłużna wygodna sofa z krótkim oparciem.",
+    "variants": ["Szary jedwab"],
+    "price": "850,-"
   },
   {
-    "title": "Sofa z szafka",
-    "slug": "sofa-z-szafka",
+    "title": "Czarna sofa skórzana",
+    "slug": "czarna-sofa-skorzana",
     "category": "sofa",
-    "img": "../../images/products/sofa-z-szafka.jpg",
-    "description": "Sofa z dwoma szafkami.",
-    "materials": ["Szary jedwab", "Pomarszczony błękit"]
+    "img": "../../images/products/sofa-czarna-skorzana.png",
+    "description": "Skórzana sofa na 3 osoby z podłokietnikami.",
+    "variants": ["Szary jedwab", "Pomarszczony błękit"],
+    "price": "920,-"
   }
 ]

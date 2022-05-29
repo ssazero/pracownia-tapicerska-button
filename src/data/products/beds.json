@@ -1,18 +1,20 @@
 [
   {
-    "title": "Blekitne lozko",
-    "slug": "blekitne-lozko",
-    "category": "bed",
-    "img": "../../images/products/blekitne-lozko.jpg",
-    "description": "Super szara sofa.",
-    "materials": ["Szary jedwab", "Ćwierkowany czerwień"]
+    "title": "Łóżko fioletowe z pojemnikiem",
+    "slug": "lozko-fioletowe-pojemnik",
+    "category": "lozko",
+    "img": "../../images/products/lozko-fioletowe-pojemnik.jpg",
+    "description": "Łózko tapicerowane z zagłówiem oraz pojemnikiem.",
+    "variants": [],
+    "price": "700,-"
   },
   {
-    "title": "Bezowe lozko",
-    "slug": "bezowe-lozko",
-    "category": "bed",
-    "img": "../../images/products/bezowe-lozko.jpg",
-    "description": "Sofa z dwoma szafkami.",
-    "materials": ["Szary jedwab", "Pomarszczony błękit"]
+    "title": "Łóżko grafitowe z zagłówkiem",
+    "slug": "lozko-grafitowe",
+    "category": "lozko",
+    "img": "../../images/products/lozko-grafitowe.png",
+    "description": "Łózko z wysuwanymi szufladami oraz z zagłówkiem.",
+    "variants": ["Szary jedwab", "Pomarszczony błękit"],
+    "price": "650,-"
   }
 ]

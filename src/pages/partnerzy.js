@@ -1,16 +1,16 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
-import SEO from '../components/seo';
-import Layout from '../containers/layout';
-import Partner from '../components/partner';
+import Seo from '../components/SEO';
+import Layout from '../containers/Layout';
+import Partner from '../components/Partner';
 
 const Partners = () => {
   const { partners } = useStaticQuery(query);
 
   return (
     <Layout>
-      <SEO
+      <Seo
         title='Partnerzy'
         description='Nasi partnerzy: Projekt W, Kameleoon'
       />

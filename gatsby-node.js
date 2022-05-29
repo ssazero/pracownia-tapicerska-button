@@ -6,8 +6,11 @@ exports.createPages = async ({ graphql, actions }) => {
       beds: allBedsJson {
         nodes {
           category
+          description
           title
           slug
+          price
+          variants
           img {
             childImageSharp {
               fluid {
@@ -20,8 +23,11 @@ exports.createPages = async ({ graphql, actions }) => {
       sofas: allSofasJson {
         nodes {
           category
+          description
           title
           slug
+          price
+          variants
           img {
             childImageSharp {
               fluid {

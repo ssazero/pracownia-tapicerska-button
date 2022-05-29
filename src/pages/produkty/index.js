@@ -1,33 +1,92 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 
-import Layout from '../../containers/layout';
-import SEO from '../../components/seo';
+import Layout from '../../containers/Layout';
+import Seo from '../../components/SEO';
+import ProductItem from '../../components/ProductItem';
 
 const Products = ({ data }) => {
+  const [category, setCategory] = React.useState('all');
   const beds = data.beds.nodes;
   const sofas = data.sofas.nodes;
-  const products = new Array().concat(beds, sofas);
+  const products = []
+    .concat(beds, sofas)
+    .filter((product) =>
+      category !== 'all' ? category === product.category : true
+    );
 
   console.log(products);
 
+  const onCategoryChange = (event) => {
+    setCategory(event.target.value);
+  };
+
   return (
     <Layout>
-      <SEO
-        title='Produkty'
-        description='Button - Autorska pracownia tapicerska - Grzegorz Smagło. Do każdego zlecenia podchodzimy z zaangażowaniem, a także pełnym profesjonalizmem. Nasi Klienci docenili nasz kunszt i przy każdej okazji podkreślają, iż polecają nasz zakład tapicerski znajomym i rodzinie. Jesteśmy wdzięczni za pokładane w nas zaufanie i zapewniamy, że jakość naszych usług stale wzrasta, wciąż podwyższamy poprzeczkę i szlifujemy umiejętności.'
-      />
+      <Seo title='Produkty' description='...' />
       <h1 className='section-title'>
         <span>Produkty</span>
       </h1>
+      <div className='product-category-radio' onChange={onCategoryChange}>
+        <span className='product-category-radio__title'>
+          Wybierz kategorię:
+        </span>
+
+        <div className='product-category-radio__option'>
+          <label for='all'>Wszystkie</label>
+          <input
+            type='radio'
+            id='all'
+            name='category'
+            value='all'
+            checked={'all' === category}
+          />
+        </div>
+
+        <div className='product-category-radio__option'>
+          <label for='sofas'>Sofy</label>
+          <input
+            type='radio'
+            id='sofas'
+            name='category'
+            value='sofa'
+            checked={'sofa' === category}
+          />
+        </div>
+
+        <div className='product-category-radio__option'>
+          <label for='beds'>Łóżka</label>
+          <input
+            type='radio'
+            id='beds'
+            name='category'
+            value='lozko'
+            checked={'lozko' === category}
+          />
+        </div>
+      </div>
       <div className='products'>
         {products.map((product) => (
-          <Link to={`/produkty/${product.slug}`} key={product.id}>
-            <div>
-              <h3>{product.title}</h3>
-              <p>{product.category}</p>
-            </div>
-          </Link>
+          <ProductItem
+            key={product.id}
+            title={product.title}
+            description={product.description}
+            variants={product.variants.length}
+            slug={product.slug}
+            price={product.price}
+            img={product.img.childImageSharp.fluid}
+          />
+        ))}
+        {products.map((product) => (
+          <ProductItem
+            key={product.id}
+            title={product.title}
+            description={product.description}
+            variants={product.variants.length}
+            slug={product.slug}
+            price={product.price}
+            img={product.img.childImageSharp.fluid}
+          />
         ))}
       </div>
     </Layout>
@@ -48,8 +107,12 @@ export const query = graphql`
           }
         }
         category
+        variants
+        description
         title
         slug
+        price
+        id
       }
     }
     sofas: allSofasJson {
@@ -62,8 +125,12 @@ export const query = graphql`
           }
         }
         category
+        variants
+        description
         title
         slug
+        price
+        id
       }
     }
   }
