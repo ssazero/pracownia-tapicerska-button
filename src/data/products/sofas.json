@@ -6,7 +6,8 @@
     "img": "../../images/products/sofa-bezowa.png",
     "description": "Podłużna wygodna sofa z krótkim oparciem.",
     "variants": ["Szary jedwab"],
-    "price": "850,-"
+    "price": "850,-",
+    "size": "80x160x60 cm"
   },
   {
     "title": "Czarna sofa skórzana",
@@ -15,6 +16,7 @@
     "img": "../../images/products/sofa-czarna-skorzana.png",
     "description": "Skórzana sofa na 3 osoby z podłokietnikami.",
     "variants": ["Szary jedwab", "Pomarszczony błękit"],
-    "price": "920,-"
+    "price": "920,-",
+    "size": "90x140x80 cm"
   }
 ]

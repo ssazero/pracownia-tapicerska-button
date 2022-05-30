@@ -6,7 +6,8 @@
     "img": "../../images/products/lozko-fioletowe-pojemnik.jpg",
     "description": "Łózko tapicerowane z zagłówiem oraz pojemnikiem.",
     "variants": [],
-    "price": "700,-"
+    "price": "700,-",
+    "size": "200x200x50 cm"
   },
   {
     "title": "Łóżko grafitowe z zagłówkiem",
@@ -15,6 +16,7 @@
     "img": "../../images/products/lozko-grafitowe.png",
     "description": "Łózko z wysuwanymi szufladami oraz z zagłówkiem.",
     "variants": ["Szary jedwab", "Pomarszczony błękit"],
-    "price": "650,-"
+    "price": "650,-",
+    "size": "180x200x50 cm"
   }
 ]

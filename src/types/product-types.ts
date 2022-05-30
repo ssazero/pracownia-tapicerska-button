@@ -4,6 +4,7 @@ export interface IProduct {
   img: string;
   description: string;
   materials: string[];
+  size: string;
 }
 
 export interface IProductList {

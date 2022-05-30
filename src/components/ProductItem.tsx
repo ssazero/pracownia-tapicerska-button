@@ -19,7 +19,7 @@ const ProductItem: React.FC<ProductItem> = ({
   price,
   variants,
 }) => (
-  <div className='product-item'>
+  <article className='product-item'>
     <Link to={`/produkty/${slug}`}>
       <div className='product-item__image-container'>
         <Img className='product-item__image' fluid={img} alt={title} />
@@ -35,7 +35,7 @@ const ProductItem: React.FC<ProductItem> = ({
         <span className='product-item__price'>{price}</span>
       </div>
     </div>
-  </div>
+  </article>
 );
 
 export default ProductItem;

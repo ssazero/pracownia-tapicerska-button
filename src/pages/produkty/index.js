@@ -4,6 +4,7 @@ import { graphql } from 'gatsby';
 import Layout from '../../containers/Layout';
 import Seo from '../../components/SEO';
 import ProductItem from '../../components/ProductItem';
+import CategoryRadio from '../../components/CategoryRadio';
 
 const Products = ({ data }) => {
   const [category, setCategory] = React.useState('all');
@@ -15,8 +16,6 @@ const Products = ({ data }) => {
       category !== 'all' ? category === product.category : true
     );
 
-  console.log(products);
-
   const onCategoryChange = (event) => {
     setCategory(event.target.value);
   };
@@ -27,45 +26,8 @@ const Products = ({ data }) => {
       <h1 className='section-title'>
         <span>Produkty</span>
       </h1>
-      <div className='product-category-radio' onChange={onCategoryChange}>
-        <span className='product-category-radio__title'>
-          Wybierz kategorię:
-        </span>
-
-        <div className='product-category-radio__option'>
-          <label for='all'>Wszystkie</label>
-          <input
-            type='radio'
-            id='all'
-            name='category'
-            value='all'
-            checked={'all' === category}
-          />
-        </div>
-
-        <div className='product-category-radio__option'>
-          <label for='sofas'>Sofy</label>
-          <input
-            type='radio'
-            id='sofas'
-            name='category'
-            value='sofa'
-            checked={'sofa' === category}
-          />
-        </div>
-
-        <div className='product-category-radio__option'>
-          <label for='beds'>Łóżka</label>
-          <input
-            type='radio'
-            id='beds'
-            name='category'
-            value='lozko'
-            checked={'lozko' === category}
-          />
-        </div>
-      </div>
-      <div className='products'>
+      <CategoryRadio category={category} onCategoryChange={onCategoryChange} />
+      <section className='products'>
         {products.map((product) => (
           <ProductItem
             key={product.id}
@@ -88,7 +50,7 @@ const Products = ({ data }) => {
             img={product.img.childImageSharp.fluid}
           />
         ))}
-      </div>
+      </section>
     </Layout>
   );
 };

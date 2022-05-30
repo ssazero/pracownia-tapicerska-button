@@ -11,6 +11,7 @@ exports.createPages = async ({ graphql, actions }) => {
           slug
           price
           variants
+          size
           img {
             childImageSharp {
               fluid {
@@ -28,6 +29,7 @@ exports.createPages = async ({ graphql, actions }) => {
           slug
           price
           variants
+          size
           img {
             childImageSharp {
               fluid {
@@ -41,12 +43,8 @@ exports.createPages = async ({ graphql, actions }) => {
 
     fragment DefaultFluidFields on ImageSharpFluid {
       base64
-      tracedSVG
-      srcWebp
-      srcSetWebp
-      originalImg
-      originalName
       aspectRatio
+      src
       srcSet
       sizes
     }
