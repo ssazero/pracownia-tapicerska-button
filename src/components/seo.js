@@ -18,20 +18,17 @@ function SEO({ title, description }) {
       <meta name='description' content={seo.description} />
       <meta name='image' content={seo.image} />
       {seo.title && <meta property='og:title' content={seo.title} />}
-      {seo.description && (
-        <meta property='og:description' content={seo.description} />
-      )}
+      {seo.description && <meta property='og:description' content={seo.description} />}
       {seo.image && <meta property='og:image' content={seo.image} />}
       <meta name='twitter:card' content='summary_large_image' />
       {seo.title && <meta name='twitter:title' content={seo.title} />}
-      {seo.description && (
-        <meta name='twitter:description' content={seo.description} />
-      )}
+      {seo.description && <meta name='twitter:description' content={seo.description} />}
       {seo.image && <meta name='twitter:image' content={seo.image} />}
       <link
         href='https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100;200;300;400;500;600;700&display=swap'
         rel='stylesheet'
       />
+      <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css' rel='stylesheet' />
     </Helmet>
   );
 }

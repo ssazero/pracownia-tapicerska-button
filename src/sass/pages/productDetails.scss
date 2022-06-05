@@ -10,13 +10,16 @@
   }
 
   &__image-container {
+    background-color: white;
     margin-right: 2rem;
     flex-basis: 50%;
+    height: 32rem;
   }
 
   &__image {
     width: 100%;
-    height: auto;
+    height: 100%;
+    overflow: hidden;
   }
 
   &__content {
@@ -53,4 +56,23 @@
 
 .contact-email {
   font-weight: 600;
+}
+
+.contact-map {
+  text-align: center;
+  margin: 2rem auto;
+  width: 80%;
+  height: 30rem;
+
+  div {
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+
+  span {
+    display: inline-block;
+    text-transform: uppercase;
+    width: 100%;
+    text-align: center;
+  }
 }

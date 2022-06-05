@@ -3,6 +3,7 @@ import Layout from '../containers/Layout';
 import Seo from '../components/SEO';
 import Img from 'gatsby-image';
 import { Link } from 'gatsby';
+import Map from '../components/Map';
 
 const ProductDetails = ({ pageContext }) => {
   console.log(pageContext);
@@ -17,9 +18,12 @@ const ProductDetails = ({ pageContext }) => {
         <div className='product-details__image-container'>
           <Img
             className='product-details__image'
+            imgStyle={{ objectFit: 'contain' }}
             fluid={pageContext.img.childImageSharp.fluid}
             alt={pageContext.title}
           />
+          <div>FIRST</div>
+          <div>SECOND</div>
         </div>
         <div className='product-details__content'>
           <h3 className='product-details__title'>{pageContext.title}</h3>
@@ -31,18 +35,16 @@ const ProductDetails = ({ pageContext }) => {
               <span className='gray-label'>Wymiary: </span>
               {pageContext.size}
             </p>
-            <p className='product-details__variants'>
-              <span className='gray-label'>Inne możliwe materiały: </span>
-              {pageContext.variants.map((variant, index) => (
-                <>
-                  <span>
-                    {`${variant}${
-                      pageContext.variants.length - 1 !== index ? ', ' : ' '
-                    }`}
-                  </span>
-                </>
-              ))}
-            </p>
+            {pageContext.variants.length > 0 && (
+              <p className='product-details__variants'>
+                <span className='gray-label'>Inne możliwe materiały: </span>
+                {pageContext.variants.map((variant, index) => (
+                  <>
+                    <span>{`${variant}${pageContext.variants.length - 1 !== index ? ', ' : ' '}`}</span>
+                  </>
+                ))}
+              </p>
+            )}
             <p className='product-details__price'>
               <span className='gray-label'>Cena: </span>
               {pageContext.price}
@@ -55,17 +57,17 @@ const ProductDetails = ({ pageContext }) => {
           <div className='product-details__contact'>
             <p>Możesz również zakupić przedmiot za pomocą drogi mailowej.</p>
             <p>
-              E-Mail:{' '}
-              <span className='contact-email'>kontakt@pracownia-button.pl</span>
+              E-Mail: <span className='contact-email'>kontakt@pracownia-button.pl</span>
             </p>
             <p>
-              Przekaż mi w e-mailu produkt, który chcesz zakupić, a ja wyślę Ci
-              dane do przelewu, a następnie poślę produkt w Twoją stronę!
+              Przekaż mi w e-mailu produkt, który chcesz zakupić, a ja wyślę Ci dane do przelewu, a następnie poślę
+              produkt w Twoją stronę!
             </p>
-            <p>
-              Istnieje również opcja aby odebrać produkt osobiście pod adresem
-              wskazanym na mapie poniżej.
-            </p>
+            <p>Istnieje również opcja aby odebrać produkt osobiście pod adresem wskazanym na mapie poniżej.</p>
+            <div className='contact-map'>
+              <span>Lokalizacja pracowni</span>
+              <Map />
+            </div>
           </div>
         </div>
       </article>
