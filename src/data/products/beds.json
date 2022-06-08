@@ -3,7 +3,11 @@
     "title": "Łóżko fioletowe z pojemnikiem",
     "slug": "lozko-fioletowe-pojemnik",
     "category": "lozko",
-    "img": "../../images/products/lozko-fioletowe-pojemnik.jpg",
+    "imgs": [
+      "../../images/products/lozko-fioletowe-pojemnik.jpg",
+      "../../images/products/lozko-fioletowe-pojemnik.jpg",
+      "../../images/products/lozko-grafitowe.png"
+    ],
     "description": "Łózko tapicerowane z zagłówiem oraz pojemnikiem.",
     "variants": [],
     "price": "700,-",
@@ -13,7 +17,11 @@
     "title": "Łóżko grafitowe z zagłówkiem",
     "slug": "lozko-grafitowe",
     "category": "lozko",
-    "img": "../../images/products/lozko-grafitowe.png",
+    "imgs": [
+      "../../images/products/lozko-grafitowe.png",
+      "../../images/products/lozko-grafitowe.png",
+      "../../images/products/lozko-fioletowe-pojemnik.jpg"
+    ],
     "description": "Łózko z wysuwanymi szufladami oraz z zagłówkiem.",
     "variants": ["Szary jedwab", "Pomarszczony błękit"],
     "price": "650,-",

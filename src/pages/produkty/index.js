@@ -12,9 +12,7 @@ const Products = ({ data }) => {
   const sofas = data.sofas.nodes;
   const products = []
     .concat(beds, sofas)
-    .filter((product) =>
-      category !== 'all' ? category === product.category : true
-    );
+    .filter((product) => (category !== 'all' ? category === product.category : true));
 
   const onCategoryChange = (event) => {
     setCategory(event.target.value);
@@ -36,7 +34,7 @@ const Products = ({ data }) => {
             variants={product.variants.length}
             slug={product.slug}
             price={product.price}
-            img={product.img.childImageSharp.fluid}
+            img={product.imgs[0].childImageSharp.fluid}
           />
         ))}
         {products.map((product) => (
@@ -47,7 +45,7 @@ const Products = ({ data }) => {
             variants={product.variants.length}
             slug={product.slug}
             price={product.price}
-            img={product.img.childImageSharp.fluid}
+            img={product.imgs[0].childImageSharp.fluid}
           />
         ))}
       </section>
@@ -61,7 +59,7 @@ export const query = graphql`
   query AllProducts {
     beds: allBedsJson {
       nodes {
-        img {
+        imgs {
           childImageSharp {
             fluid {
               ...GatsbyImageSharpFluid
@@ -79,7 +77,7 @@ export const query = graphql`
     }
     sofas: allSofasJson {
       nodes {
-        img {
+        imgs {
           childImageSharp {
             fluid {
               ...GatsbyImageSharpFluid

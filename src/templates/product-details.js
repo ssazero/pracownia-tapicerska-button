@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'gatsby';
+
 import Layout from '../containers/Layout';
 import Seo from '../components/SEO';
-import Img from 'gatsby-image';
-import { Link } from 'gatsby';
+import ImageChooser from '../components/ImageChooser';
 import Map from '../components/Map';
 
 const ProductDetails = ({ pageContext }) => {
@@ -16,14 +17,7 @@ const ProductDetails = ({ pageContext }) => {
       </h1>
       <article className='product-details'>
         <div className='product-details__image-container'>
-          <Img
-            className='product-details__image'
-            imgStyle={{ objectFit: 'contain' }}
-            fluid={pageContext.img.childImageSharp.fluid}
-            alt={pageContext.title}
-          />
-          <div>FIRST</div>
-          <div>SECOND</div>
+          <ImageChooser alt={pageContext.title} srcs={pageContext.imgs.map((img) => img.childImageSharp.fluid)} />
         </div>
         <div className='product-details__content'>
           <h3 className='product-details__title'>{pageContext.title}</h3>

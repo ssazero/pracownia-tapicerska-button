@@ -3,7 +3,11 @@
     "title": "Sofa beżowa",
     "slug": "sofa-bezowa",
     "category": "sofa",
-    "img": "../../images/products/sofa-bezowa.png",
+    "imgs": [
+      "../../images/products/sofa-bezowa.png",
+      "../../images/products/sofa-bezowa.png",
+      "../../images/products/sofa-czarna-skorzana.png"
+    ],
     "description": "Podłużna wygodna sofa z krótkim oparciem.",
     "variants": ["Szary jedwab"],
     "price": "850,-",
@@ -13,7 +17,11 @@
     "title": "Czarna sofa skórzana",
     "slug": "czarna-sofa-skorzana",
     "category": "sofa",
-    "img": "../../images/products/sofa-czarna-skorzana.png",
+    "imgs": [
+      "../../images/products/sofa-czarna-skorzana.png",
+      "../../images/products/sofa-czarna-skorzana.png",
+      "../../images/products/sofa-bezowa.png"
+    ],
     "description": "Skórzana sofa na 3 osoby z podłokietnikami.",
     "variants": ["Szary jedwab", "Pomarszczony błękit"],
     "price": "920,-",

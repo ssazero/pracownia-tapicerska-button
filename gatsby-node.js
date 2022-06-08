@@ -12,7 +12,7 @@ exports.createPages = async ({ graphql, actions }) => {
           price
           variants
           size
-          img {
+          imgs {
             childImageSharp {
               fluid {
                 ...DefaultFluidFields
@@ -30,7 +30,7 @@ exports.createPages = async ({ graphql, actions }) => {
           price
           variants
           size
-          img {
+          imgs {
             childImageSharp {
               fluid {
                 ...DefaultFluidFields
