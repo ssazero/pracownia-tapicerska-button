@@ -6,34 +6,7 @@ import Seo from '../components/SEO';
 import Layout from '../containers/Layout';
 import GalleryItem from '../components/GalleryItem';
 import { compareNames } from '../utils/stringUtils';
-
-const options = {
-  buttons: {
-    backgroundColor: '#14141477',
-    iconColor: '#f1eff3',
-    showAutoplayButton: false,
-    showCloseButton: true,
-    showDownloadButton: false,
-    showFullscreenButton: true,
-    showNextButton: true,
-    showPrevButton: true,
-    showThumbnailsButton: true,
-  },
-  settings: {
-    overlayColor: '#151516dd',
-    transitionSpeed: 1000,
-    transitionTimingFunction: 'linear',
-    hideControlsAfter: false,
-  },
-  thumbnails: {
-    thumbnailsSize: ['120px', '120px'],
-    thumbnailsPosition: 'bottom',
-    thumbnailsGap: '0 0 0 0',
-    thumbnailsOpacity: 0.3,
-    thumbnailsContainerBackgroundColor: '#14141477',
-    thumbnailsContainerPadding: '0 5px',
-  },
-};
+import { options } from '../utils/simpleReactLightbox';
 
 const Realisations = ({ data }) => {
   const numberOfRealisations = data.realisations.nodes.length;
@@ -43,12 +16,7 @@ const Realisations = ({ data }) => {
     .sort((a, b) => compareNames(a.originalName, b.originalName));
 
   const imageSources = data.realisations.nodes
-    .sort((a, b) =>
-      compareNames(
-        a.childImageSharp.fluid.originalName,
-        b.childImageSharp.fluid.originalName
-      )
-    )
+    .sort((a, b) => compareNames(a.childImageSharp.fluid.originalName, b.childImageSharp.fluid.originalName))
     .map((el) => el.childImageSharp.fluid.originalImg);
 
   const galleryItems = [...Array(numberOfRealisations)].map((_, i) => (
@@ -79,9 +47,7 @@ export default Realisations;
 
 export const query = graphql`
   query AllRealisations {
-    realisations: allFile(
-      filter: { relativePath: { regex: "/realisations/" } }
-    ) {
+    realisations: allFile(filter: { relativePath: { regex: "/realisations/" } }) {
       nodes {
         childImageSharp {
           fluid {

@@ -1,5 +1,8 @@
 import React from 'react';
 import Img, { FluidObject } from 'gatsby-image';
+import { SRLWrapper } from 'simple-react-lightbox';
+
+import { options } from '../utils/simpleReactLightbox';
 
 const ImageChooser: React.FC<{
   alt: string;
@@ -19,7 +22,9 @@ const ImageChooser: React.FC<{
 
   return (
     <div className='image-chooser'>
-      <Img className='image-chooser__image' imgStyle={{ objectFit: 'contain' }} fluid={thumbnails[0]} alt={alt} />
+      <SRLWrapper options={{ ...options, thumbnails: { showThumbnails: false } }}>
+        <Img className='image-chooser__image' imgStyle={{ objectFit: 'contain' }} fluid={thumbnails[0]} alt={alt} />
+      </SRLWrapper>
       <div className='image-chooser__thumbnails'>
         {thumbnails.map(
           (imgSrc, index) =>

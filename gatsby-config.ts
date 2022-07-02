@@ -25,14 +25,10 @@ const config: GatsbyConfig = {
       },
     },
     {
-      resolve: `gatsby-plugin-preload-fonts`,
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [
-          {
-            family: `Open Sans`,
-            variants: [`400`, `700`],
-          },
-        ],
+        fonts: [`poiret one`],
+        display: 'swap',
       },
     },
     'gatsby-plugin-sharp',

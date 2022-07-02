@@ -14,6 +14,13 @@
     margin-right: 2rem;
     flex-basis: 50%;
     height: 32rem;
+
+    @include respond(phone) {
+      background-color: transparent;
+      flex-basis: 100%;
+      margin-right: 0;
+      margin-bottom: 2rem;
+    }
   }
 
   &__content {
