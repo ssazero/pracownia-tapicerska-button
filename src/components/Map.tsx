@@ -19,7 +19,7 @@ const Map = () => {
         zoom: 14,
       }}
       style={{ width: '100%', height: '100%' }}
-      mapStyle='mapbox://styles/mapbox/outdoors-v11'
+      mapStyle='mapbox://styles/mapbox/streets-v11'
       mapboxAccessToken={ACCESS_TOKEN}
     >
       <Marker

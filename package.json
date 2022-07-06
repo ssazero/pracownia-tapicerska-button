@@ -3,18 +3,22 @@
   "version": "1.0.0",
   "private": true,
   "description": "Button - Autorska pracownia tapicerska - Grzegorz Smagło. Do każdego zlecenia podchodzimy z zaangażowaniem, a także pełnym profesjonalizmem. Nasi Klienci docenili nasz kunszt i przy każdej okazji podkreślają, iż polecają nasz zakład tapicerski znajomym i rodzinie. Jesteśmy wdzięczni za pokładane w nas zaufanie i zapewniamy, że jakość naszych usług stale wzrasta, wciąż podwyższamy poprzeczkę i szlifujemy umiejętności.",
-  "author": "Samuel Kedziora <samukedo@gmail.com>",
   "keywords": [
     "gatsby"
   ],
+  "author": "Samuel Kedziora <samukedo@gmail.com>",
   "scripts": {
-    "develop": "gatsby develop",
-    "start": "gatsby develop",
     "build": "gatsby build",
-    "serve": "gatsby serve",
     "clean": "gatsby clean",
+    "develop": "gatsby develop",
+    "serve": "gatsby serve",
+    "start": "gatsby develop",
     "typecheck": "tsc --noEmit"
   },
+  "browserslist": [
+    "defaults",
+    "not ie 11"
+  ],
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-brands-svg-icons": "^6.1.1",
