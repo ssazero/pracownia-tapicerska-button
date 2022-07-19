@@ -10,7 +10,7 @@
   }
 
   &__image-container {
-    background-color: white;
+    background-color: $color-white;
     margin-right: 2rem;
     flex-basis: 50%;
     height: 32rem;
@@ -52,7 +52,7 @@
 }
 
 .gray-label {
-  color: $color-light-gray;
+  color: #ccc;
 }
 
 .contact-email {

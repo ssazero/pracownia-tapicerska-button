@@ -9,11 +9,8 @@ const Partners = () => {
   const { partners } = useStaticQuery(query);
 
   return (
-    <Layout>
-      <Seo
-        title='Partnerzy'
-        description='Nasi partnerzy: Projekt W, Kameleoon'
-      />
+    <Layout compress>
+      <Seo title='Partnerzy' description='Nasi partnerzy: Projekt W, Kameleoon' />
       <article className='partners'>
         <h1 className='section-title'>
           <span>Partnerzy</span>

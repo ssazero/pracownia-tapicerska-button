@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Krzesło Agea",
+    "slug": "krzeslo-agea",
+    "category": "krzeslo",
+    "imgs": ["../../images/products/krzeslo-agea.jpg", "../../images/products/krzeslo-agea-2.jpg"],
+    "description": "Krzesło o dużym wpływie estetycznym, gdzie miękka linia siedziska spotyka się z monolityczną objętością podstawy.",
+    "variants": ["Szary jedwab", "Pomarszczony błękit"],
+    "price": "444,-",
+    "size": "180x200x50 cm"
+  },
+  {
+    "title": "Łóżko Nelsona",
+    "slug": "lozko-nelsona",
+    "category": "lozko",
+    "imgs": ["../../images/products/lozko-nelsona.jpg", "../../images/products/lozko-nelsona-2.jpg"],
+    "description": "Nelson, łóżko zaprojektowane jako protagonista strefy nocnej dzięki połączeniu różnych i wyrazistych materiałów.",
+    "variants": ["Szary jedwab", "Pomarszczony błękit"],
+    "price": "1600,-",
+    "size": "180x200x50 cm"
+  },
+  {
+    "title": "Sofa Soft Island",
+    "slug": "sofa-soft-island",
+    "category": "sofa",
+    "imgs": ["../../images/products/sofa-soft-island.jpg", "../../images/products/sofa-soft-island-2.jpg"],
+    "description": "Soft Island to wyrafinowana kolekcja zapewniająca komfort, który został skrupulatnie przebadany i którego słowami kluczowymi są prostota i relaks, interpretowane współcześnie.",
+    "variants": ["Szary jedwab", "Pomarszczony błękit"],
+    "price": "1600,-",
+    "size": "180x200x50 cm"
+  }
+]

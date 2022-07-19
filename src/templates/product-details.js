@@ -10,7 +10,7 @@ const ProductDetails = ({ pageContext }) => {
   console.log(pageContext);
 
   return (
-    <Layout>
+    <Layout compress>
       <Seo title={pageContext.title} description={pageContext.description} />
       <h1 className='section-title'>
         <span>{pageContext.title}</span>

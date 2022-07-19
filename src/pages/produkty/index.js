@@ -8,18 +8,14 @@ import CategoryRadio from '../../components/CategoryRadio';
 
 const Products = ({ data }) => {
   const [category, setCategory] = React.useState('all');
-  const beds = data.beds.nodes;
-  const sofas = data.sofas.nodes;
-  const products = []
-    .concat(beds, sofas)
-    .filter((product) => (category !== 'all' ? category === product.category : true));
+  const products = data.products.nodes.filter((product) => (category !== 'all' ? category === product.category : true));
 
   const onCategoryChange = (event) => {
     setCategory(event.target.value);
   };
 
   return (
-    <Layout>
+    <Layout compress>
       <Seo title='Produkty' description='...' />
       <h1 className='section-title'>
         <span>Produkty</span>
@@ -37,7 +33,7 @@ const Products = ({ data }) => {
             img={product.imgs[0].childImageSharp.fluid}
           />
         ))}
-        {products.map((product) => (
+        {/* {products.map((product) => (
           <ProductItem
             key={product.id}
             title={product.title}
@@ -47,7 +43,7 @@ const Products = ({ data }) => {
             price={product.price}
             img={product.imgs[0].childImageSharp.fluid}
           />
-        ))}
+        ))} */}
       </section>
     </Layout>
   );
@@ -57,25 +53,7 @@ export default Products;
 
 export const query = graphql`
   query AllProducts {
-    beds: allBedsJson {
-      nodes {
-        imgs {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-        category
-        variants
-        description
-        title
-        slug
-        price
-        id
-      }
-    }
-    sofas: allSofasJson {
+    products: allProductsJson {
       nodes {
         imgs {
           childImageSharp {

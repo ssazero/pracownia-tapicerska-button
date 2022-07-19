@@ -20,21 +20,9 @@ import SideDrawer from '../components/SideDrawer';
 import Sidebar from '../components/Sidebar';
 import '../sass/main.scss';
 
-library.add(
-  faEnvelope,
-  faAddressCard,
-  faSearch,
-  faLink,
-  faCog,
-  faCogs,
-  faPhoneAlt,
-  faMobileAlt,
-  faMapMarkerAlt
-);
+library.add(faEnvelope, faAddressCard, faSearch, faLink, faCog, faCogs, faPhoneAlt, faMobileAlt, faMapMarkerAlt);
 
-console.log(
-  'Thanks for lightbox to: https://www.npmjs.com/package/simple-react-lightbox'
-);
+console.log('Thanks for lightbox to: https://www.npmjs.com/package/simple-react-lightbox');
 
 const Layout = (props) => {
   const [sideDrawerIsVisible, setSideDrawerIsVisible] = useState(false);
@@ -93,10 +81,7 @@ const Layout = (props) => {
     <SimpleReactLightbox>
       <div className='layout' ref={layoutRef}>
         <div className='layout__start'>
-          <Sidebar
-            contentRef={sidebarContentRef}
-            alteration={sidebarAlteration}
-          />
+          <Sidebar contentRef={sidebarContentRef} alteration={sidebarAlteration} compress={props.compress} />
           <div className='main'>
             <div className='layout__toolbar'>
               <Toolbar
@@ -110,10 +95,7 @@ const Layout = (props) => {
           </div>
         </div>
         <Footer footerRef={footerRef} />
-        <SideDrawer
-          opened={sideDrawerIsVisible}
-          closed={sideDrawerClosedHandler}
-        />
+        <SideDrawer opened={sideDrawerIsVisible} closed={sideDrawerClosedHandler} />
       </div>
     </SimpleReactLightbox>
   );

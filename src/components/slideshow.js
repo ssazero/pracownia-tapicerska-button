@@ -72,7 +72,7 @@ const Slideshow = (props) => {
 
   return (
     <TransitionGroup className='slideshow'>
-      <img className='slideshow__logo' src='/logo-white.png' alt='Logo' />
+      <img className='slideshow__logo' src='/button-meble-logo.png' alt='Logo' />
       {props.numbers && (
         <div className='slideshow__number'>
           {slideIndex + 1} / {slides.length}
@@ -103,18 +103,9 @@ const Slideshow = (props) => {
       >
         <div className='slideshow__arrow slideshow__arrow--next'></div>
       </div>
-      <CSSTransition
-        key={`slide-${slideIndex}`}
-        timeout={2000}
-        classNames='slide'
-        unmountOnExit
-      >
+      <CSSTransition key={`slide-${slideIndex}`} timeout={2000} classNames='slide' unmountOnExit>
         <div className='slideshow__slide '>
-          <img
-            className='slideshow__slide-image'
-            src={slides[slideIndex].src}
-            alt={`slide-${slideIndex}`}
-          />
+          <img className='slideshow__slide-image' src={slides[slideIndex].src} alt={`slide-${slideIndex}`} />
         </div>
       </CSSTransition>
     </TransitionGroup>

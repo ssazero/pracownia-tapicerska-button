@@ -3,25 +3,7 @@ const path = require('path');
 exports.createPages = async ({ graphql, actions }) => {
   const { data } = await graphql(`
     query AllProducts {
-      beds: allBedsJson {
-        nodes {
-          category
-          description
-          title
-          slug
-          price
-          variants
-          size
-          imgs {
-            childImageSharp {
-              fluid {
-                ...DefaultFluidFields
-              }
-            }
-          }
-        }
-      }
-      sofas: allSofasJson {
+      products: allProductsJson {
         nodes {
           category
           description
@@ -49,9 +31,7 @@ exports.createPages = async ({ graphql, actions }) => {
       sizes
     }
   `);
-  const beds = data.beds.nodes;
-  const sofas = data.sofas.nodes;
-  const products = new Array().concat(beds, sofas);
+  const products = data.products.nodes;
 
   products.forEach((product) => {
     actions.createPage({

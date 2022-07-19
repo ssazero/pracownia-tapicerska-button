@@ -2,12 +2,7 @@
 $color-primary: #333;
 $color-background: #0f0f0f;
 $main-gradient: linear-gradient(175deg, #2c2c2c 0%, #181819 43%, #151516 100%);
-$main-gradient-t: linear-gradient(
-  175deg,
-  #0f0f0faa 0%,
-  #0f0f0fe5 43%,
-  #0f0f0fff 100%
-);
+$main-gradient-t: linear-gradient(175deg, #0f0f0faa 0%, #0f0f0fe5 43%, #0f0f0fff 100%);
 $inactive-gradient: radial-gradient(
   circle,
   rgba(201, 201, 201, 0.658) 0%,
@@ -24,7 +19,7 @@ $white-gradient: linear-gradient(
 $color-gray: rgb(100, 100, 100);
 $color-light-gray: rgb(164, 164, 164);
 
-$color-white: #fcfcfc;
+$color-white: #f0f0f0;
 $color-black: #000;
 $color-dark: #141414;
 

@@ -31,7 +31,7 @@ const Realisations = ({ data }) => {
   ));
 
   return (
-    <Layout>
+    <Layout compress>
       <Seo title='Realizacje' />
       <h1 className='section-title'>
         <span>Galeria z realizacji</span>
