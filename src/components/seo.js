@@ -36,6 +36,7 @@ function SEO({ title, description }) {
 SEO.defaultProps = {
   lang: `pl`,
   title: `Button - Autorska Pracownia Tapicerska`,
+  titleTemplate: `%s - Button meble`,
   meta: [
     {
       name: `author`,

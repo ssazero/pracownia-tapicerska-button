@@ -4,10 +4,13 @@ import Layout from '../containers/Layout';
 import Seo from '../components/SEO';
 
 const NotFoundPage = () => (
-  <Layout>
-    <Seo title='404: Not found' />
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+  <Layout compress>
+    <Seo
+      title='404 - Nie znaleziono'
+      description='Niestety podstrona, na którą próbowałeś/aś się dostać nie istnieje.'
+    />
+    <h1>Nie znaleziono podstrony</h1>
+    <p>Niestety podstrona, na którą próbowałeś/aś się dostać nie istnieje.</p>
   </Layout>
 );
 

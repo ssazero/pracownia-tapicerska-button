@@ -6,10 +6,6 @@ interface IBackdrop {
   onClick: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
 }
 
-const Backdrop = ({ show, onClick }: IBackdrop) =>
-  ReactDOM.createPortal(
-    show ? <div className='backdrop' onClick={onClick}></div> : null,
-    document.getElementById('gatsby-focus-wrapper') as HTMLElement
-  );
+const Backdrop = ({ show, onClick }: IBackdrop) => (show ? <div className='backdrop' onClick={onClick} /> : null);
 
 export default Backdrop;

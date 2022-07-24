@@ -34,7 +34,7 @@ const VariantsModal: FC<Props> = ({ onClose }) => {
     OKButtonRef?.current?.focus();
   });
 
-  return ReactDOM.createPortal(
+  return (
     <>
       <Backdrop show={true} onClick={onClose} />
       <div className='variants-modal'>
@@ -50,8 +50,7 @@ const VariantsModal: FC<Props> = ({ onClose }) => {
           </button>
         </div>
       </div>
-    </>,
-    document.getElementById('gatsby-focus-wrapper') as HTMLElement
+    </>
   );
 };
 
