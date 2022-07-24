@@ -5,10 +5,7 @@ interface ICategoryRadio {
   onCategoryChange: React.ChangeEventHandler<HTMLInputElement>;
 }
 
-const CategoryRadio: React.FC<ICategoryRadio> = ({
-  category,
-  onCategoryChange,
-}) => (
+const CategoryRadio: React.FC<ICategoryRadio> = ({ category, onCategoryChange }) => (
   <div className='product-category-radio'>
     <span className='product-category-radio__title'>Wybierz kategorię:</span>
 
@@ -44,6 +41,18 @@ const CategoryRadio: React.FC<ICategoryRadio> = ({
         name='category'
         value='lozko'
         checked={'lozko' === category}
+        onChange={onCategoryChange}
+      />
+    </div>
+
+    <div className='product-category-radio__option'>
+      <label htmlFor='chairs'>Krzesła</label>
+      <input
+        type='radio'
+        id='chairs'
+        name='category'
+        value='krzeslo'
+        checked={'krzeslo' === category}
         onChange={onCategoryChange}
       />
     </div>

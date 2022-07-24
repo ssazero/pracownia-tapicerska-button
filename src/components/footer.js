@@ -38,7 +38,7 @@ const Footer = (props) => {
       <div className='footer__bottom'>
         <div className='footer__copyright'>
           <span className='footer__copyright-top'>Button © {new Date().getFullYear()} </span>
-          <span className='footer__copyright-middle'>Autorska Pracownia Tapicerska</span>
+          <span className='footer__copyright-middle'>button meble</span>
           <span className='footer__copyright-bottom'> Grzegorz Smagło </span>
         </div>
         <div className='footer__made-by'>

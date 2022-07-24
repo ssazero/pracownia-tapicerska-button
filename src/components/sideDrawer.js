@@ -12,7 +12,7 @@ const SideDrawer = (props) => {
   }
   return (
     <>
-      <Backdrop show={props.opened} clicked={props.closed} />
+      <Backdrop show={props.opened} onClick={props.closed} />
       <div className={sideDrawerClasses.join(' ')}>
         <nav className='side-drawer__nav'>
           <Navigation clicked={props.closed} />
@@ -21,10 +21,7 @@ const SideDrawer = (props) => {
               <FontAwesomeIcon icon='mobile-alt' className='side-drawer__fa' />
               Telefon
             </a>
-            <a
-              href='mailto:kontakt@pracownia-button.pl'
-              className='side-drawer__link'
-            >
+            <a href='mailto:kontakt@pracownia-button.pl' className='side-drawer__link'>
               <FontAwesomeIcon icon='envelope' className='side-drawer__fa' />
               Email
             </a>

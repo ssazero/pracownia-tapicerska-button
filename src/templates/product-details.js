@@ -5,13 +5,15 @@ import Layout from '../containers/Layout';
 import Seo from '../components/SEO';
 import ImageChooser from '../components/ImageChooser';
 import Map from '../components/Map';
+import VariantsModal from '../components/VariantsModal';
 
 const ProductDetails = ({ pageContext }) => {
-  console.log(pageContext);
+  const [IsVariantsModalVisible, setVariantsModalVisibility] = React.useState(false);
 
   return (
     <Layout compress>
       <Seo title={pageContext.title} description={pageContext.description} />
+      {IsVariantsModalVisible && <VariantsModal onClose={() => setVariantsModalVisibility(false)} />}
       <h1 className='section-title'>
         <span>{pageContext.title}</span>
       </h1>
@@ -25,20 +27,23 @@ const ProductDetails = ({ pageContext }) => {
             <p className='product-details__description'>
               <span className='gray-label'>{pageContext.description}</span>
             </p>
+            {/* {pageContext.variants.length > 0 && ( */}
+            <p className='product-details__variants'>
+              <span className='gray-label'>Możliwe wykończenia: </span>
+              <button className='text-button' onClick={() => setVariantsModalVisibility(true)}>
+                ZOBACZ WSZYSTKIE
+              </button>
+              {/* {pageContext.variants.map((variant, index) => (
+                  <>
+                    <span>{`${variant}${pageContext.variants.length - 1 !== index ? ', ' : ' '}`}</span>
+                  </>
+                ))} */}
+            </p>
+            {/* )} */}
             <p className='product-details__size'>
               <span className='gray-label'>Wymiary: </span>
               {pageContext.size}
             </p>
-            {pageContext.variants.length > 0 && (
-              <p className='product-details__variants'>
-                <span className='gray-label'>Inne możliwe materiały: </span>
-                {pageContext.variants.map((variant, index) => (
-                  <>
-                    <span>{`${variant}${pageContext.variants.length - 1 !== index ? ', ' : ' '}`}</span>
-                  </>
-                ))}
-              </p>
-            )}
             <p className='product-details__price'>
               <span className='gray-label'>Cena: </span>
               {pageContext.price}

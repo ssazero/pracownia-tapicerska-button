@@ -1,0 +1,60 @@
+.text-button {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  background-color: transparent;
+  color: $color-white;
+  font-size: 1.2rem;
+  text-decoration: none;
+  letter-spacing: 1px;
+  border: none;
+  border-bottom: 2px solid $color-blue;
+  padding: 0.5rem 2rem;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.4s all ease;
+
+  margin: 0.5rem 0;
+
+  &::before {
+    background: $color-blue;
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    transition: all 0.4s ease;
+    width: 100%;
+    height: 0%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  &:hover::before {
+    height: 600%;
+  }
+  &:hover {
+    height: 600%;
+    border-radius: 8px;
+  }
+}
+
+.simple-button {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  background-color: transparent;
+  color: $color-white;
+  font-size: 1.5rem;
+  text-decoration: none;
+  letter-spacing: 1px;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.4s all ease;
+
+  &:hover {
+    border-bottom: 2px solid $color-blue;
+  }
+}
